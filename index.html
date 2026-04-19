@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether Finance - Premium Dashboard</title>
+    <meta name="description" content="A state-of-the-art finance dashboard application featuring beautiful UI, dark mode, and seamless transaction tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="main-sidebar">
+            <div class="logo-container">
+                <img src="logo.png" alt="Aether Finance Logo" class="logo">
+                <span class="brand-name">Aether</span>
+            </div>
+            <nav class="nav-menu" id="primary-nav">
+                <a href="#" class="nav-item active" id="nav-dashboard">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item" id="nav-transactions">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    Transactions
+                </a>
+                <a href="#" class="nav-item" id="nav-wallets">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5H5a2 2 0 0 1 0-4h16V7"></path></svg>
+                    Wallets
+                </a>
+                <a href="#" class="nav-item" id="nav-analytics">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+                    Analytics
+                </a>
+                <a href="#" class="nav-item" id="nav-settings">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Settings
+                </a>
+            </nav>
+            <div class="user-profile-small">
+                <div class="avatar">AJ</div>
+                <div class="user-info">
+                    <p class="name">Alice Johnson</p>
+                    <p class="role">Pro Member</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view-section active">
+            <header class="top-header" id="top-header">
+                <div class="header-text">
+                    <h1 id="page-title">Dashboard</h1>
+                    <p class="subtitle">Welcome back, let's manage your wealth.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" id="btn-notifications" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="btn-primary" id="btn-new-transfer">New Transfer</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Balance Card -->
+                <section class="card balance-card glassmorphism" id="balance-section">
+                    <div class="card-glow"></div>
+                    <div class="balance-header">
+                        <h2>Total Balance</h2>
+                        <span class="currency-tag">USD</span>
+                    </div>
+                    <div class="balance-amount">$124,562.00</div>
+                    <div class="balance-change positive">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        +2.4% from last month
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="action-btn" id="btn-send">
+                            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></div>
+                            Send
+                        </button>
+                        <button class="action-btn" id="btn-receive">
+                            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
+                            Receive
+                        </button>
+                        <button class="action-btn" id="btn-swap">
+                            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg></div>
+                            Swap
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Chart Card -->
+                <section class="card chart-card glassmorphism" id="chart-section">
+                    <div class="card-header">
+                        <h2>Analytics</h2>
+                        <select class="custom-select" id="chart-period">
+                            <option value="7d">Last 7 Days</option>
+                            <option value="30d" selected>Last 30 Days</option>
+                            <option value="1y">1 Year</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <!-- Beautiful SVG Line Chart -->
+                        <svg class="dynamic-chart" viewBox="0 0 400 150" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--accent-color)" stop-opacity="0.4" />
+                                    <stop offset="100%" stop-color="var(--accent-color)" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                            <path class="chart-area" d="M0,150 L0,100 Q20,120 40,90 T80,80 T120,60 T160,110 T200,40 T240,70 T280,30 T320,60 T360,20 T400,40 L400,150 Z" fill="url(#chartGradient)"></path>
+                            <path class="chart-line" d="M0,100 Q20,120 40,90 T80,80 T120,60 T160,110 T200,40 T240,70 T280,30 T320,60 T360,20 T400,40" fill="none" stroke="var(--accent-color)" stroke-width="3" stroke-linecap="round"></path>
+                            <!-- Data points -->
+                            <circle cx="40" cy="90" r="4" class="chart-point"></circle>
+                            <circle cx="120" cy="60" r="4" class="chart-point"></circle>
+                            <circle cx="200" cy="40" r="4" class="chart-point"></circle>
+                            <circle cx="280" cy="30" r="4" class="chart-point"></circle>
+                            <circle cx="360" cy="20" r="4" class="chart-point"></circle>
+                        </svg>
+                    </div>
+                </section>
+
+                <!-- Transactions -->
+                <section class="card transactions-card glassmorphism" id="transactions-section">
+                    <div class="card-header">
+                        <h2>Recent Transactions</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="transaction-list">
+                        <div class="transaction-item">
+                            <div class="tx-icon receive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
+                            <div class="tx-details">
+                                <p class="tx-title">Stripe Payout</p>
+                                <p class="tx-date">Today, 10:45 AM</p>
+                            </div>
+                            <div class="tx-amount positive">+$4,250.00</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="tx-icon send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></div>
+                            <div class="tx-details">
+                                <p class="tx-title">AWS Services</p>
+                                <p class="tx-date">Yesterday, 14:20 PM</p>
+                            </div>
+                            <div class="tx-amount negative">-$120.50</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="tx-icon sub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg></div>
+                            <div class="tx-details">
+                                <p class="tx-title">Figma Subscription</p>
+                                <p class="tx-date">Oct 12, 09:00 AM</p>
+                            </div>
+                            <div class="tx-amount negative">-$15.00</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="tx-icon receive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
+                            <div class="tx-details">
+                                <p class="tx-title">Client Payment - Acme Corp</p>
+                                <p class="tx-date">Oct 10, 16:30 PM</p>
+                            </div>
+                            <div class="tx-amount positive">+$1,500.00</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Assets / Portfolio -->
+                <section class="card portfolio-card glassmorphism" id="portfolio-section">
+                    <div class="card-header">
+                        <h2>My Assets</h2>
+                    </div>
+                    <div class="asset-list">
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <div class="asset-logo" style="background: linear-gradient(135deg, #F7931A, #F7931A88);">BTC</div>
+                                <div>
+                                    <p class="asset-name">Bitcoin</p>
+                                    <p class="asset-qty">0.45 BTC</p>
+                                </div>
+                            </div>
+                            <div class="asset-value">
+                                <p>$28,450.00</p>
+                                <p class="change positive">+1.2%</p>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <div class="asset-logo" style="background: linear-gradient(135deg, #627EEA, #627EEA88);">ETH</div>
+                                <div>
+                                    <p class="asset-name">Ethereum</p>
+                                    <p class="asset-qty">12.5 ETH</p>
+                                </div>
+                            </div>
+                            <div class="asset-value">
+                                <p>$19,200.00</p>
+                                <p class="change negative">-0.8%</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settings-view" class="view-section" style="display: none;">
+                <header class="top-header">
+                    <div class="header-text">
+                        <h1>Settings</h1>
+                        <p class="subtitle">Manage your profile and preferences.</p>
+                    </div>
+                </header>
+
+                <div class="settings-grid">
+                    <!-- Profile Settings -->
+                    <section class="card settings-card glassmorphism">
+                        <div class="card-header">
+                            <h2>Profile Information</h2>
+                        </div>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label for="profile-name-input">Display Name</label>
+                                <input type="text" id="profile-name-input" class="custom-input" value="Alice Johnson">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email-input">Email Address</label>
+                                <input type="email" id="profile-email-input" class="custom-input" value="alice@example.com">
+                            </div>
+                            <button class="btn-primary" id="btn-save-profile">Save Changes</button>
+                        </div>
+                    </section>
+
+                    <!-- Appearance Settings -->
+                    <section class="card settings-card glassmorphism">
+                        <div class="card-header">
+                            <h2>Appearance</h2>
+                        </div>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label>Accent Color</label>
+                                <div class="color-picker-group">
+                                    <button class="color-btn active" data-color="#3b82f6" style="background-color: #3b82f6;" title="Blue"></button>
+                                    <button class="color-btn" data-color="#10b981" style="background-color: #10b981;" title="Green"></button>
+                                    <button class="color-btn" data-color="#8b5cf6" style="background-color: #8b5cf6;" title="Purple"></button>
+                                    <button class="color-btn" data-color="#f59e0b" style="background-color: #f59e0b;" title="Orange"></button>
+                                    <button class="color-btn" data-color="#ef4444" style="background-color: #ef4444;" title="Red"></button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Background Theme</label>
+                                <select class="custom-select" id="theme-select" style="width: 100%;">
+                                    <option value="default">Midnight Blue (Default)</option>
+                                    <option value="obsidian">Obsidian Black</option>
+                                    <option value="slate">Slate Gray</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
